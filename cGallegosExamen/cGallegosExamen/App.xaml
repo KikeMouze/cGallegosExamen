@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cGallegosExamen.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--VARIABLES GLOBALES, AQUI SE DEFINE LOS ESTILOS GLOBALES-->
+            <Style x:Key="generalStyle" TargetType="StackLayout">
+                <Setter Property="Orientation"     Value = "Vertical"   />
+                <Setter Property="WidthRequest"    Value = "150"        />
+                <Setter Property="BackgroundColor" Value = "#BBD8EB"    />
+                <Setter Property="Padding"         Value = "40,60,10,10"/>
+                <!--OTRAS PROPIEDADES-->
+
+
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

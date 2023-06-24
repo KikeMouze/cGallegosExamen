@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cGallegosExamen.Login" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Examen  parcial 1" HorizontalTextAlignment="Center" TextColor="Red"/>
+            <Image WidthRequest="100" HeightRequest="100" Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"></Image>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+            <Label Text="Usuario" FontSize="20" Grid.Row="0" Grid.Column="0"  Style="{StaticResource generalStyle}"></Label>
+
+            <Entry x:Name="txtUsuario" Placeholder="Ingresar el usuario" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Contraseña" FontSize="20" Grid.Row="1" Grid.Column="0" Style="{StaticResource generalStyle}"></Label>
+            <Entry x:Name="txtContraseña" Placeholder="Ingresar contraseña" IsPassword="True" Grid.Row="0" Grid.Column="1"  Style="{StaticResource generalStyle}"></Entry>
+
+            <Button x:Name="btnInicio" Text="Iniciar sesion" Clicked="btnInicio_Clicked"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
