@@ -4,58 +4,53 @@
              x:Class="cGallegosExamen.Resumen">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Entry" >
-                <Setter Property="BackgroundColor" Value="green"/>
-                <Setter Property="TextColor" Value="Red"/>
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Label">
+
+                <Setter Property="TextColor" Value="Blue"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lblUsuario" FontSize="14" TextColor="red" HorizontalTextAlignment="End" />
-            <Label Text="RESUMEN" FontSize="24" HorizontalTextAlignment="Center" />
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+            <Label x:Name="lblUsuario" TextColor="red" FontSize="16" HorizontalTextAlignment="End"/>
+            <Label Text="RESUMEN" HorizontalTextAlignment="Center" FontSize="24" TextColor="Black"/>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+            <Grid RowDefinitions="*,*,*,*,*,*,*,*,*" ColumnDefinitions="*,*">
+                <Label Text="Nombre"  FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="lblNombre" Text="Ciudad"  FontSize="16" Grid.Row="0" Grid.Column="1"/>
 
-                </Grid.ColumnDefinitions>
+                <Label Text="Apellido"  FontSize="16" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="lblApellido" Text="Ciudad"  FontSize="16" Grid.Row="1" Grid.Column="1"/>
 
-                <Label Text="Nombre" FontSize="24" Grid.Row="0" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtNombre" IsReadOnly="True"/>
-                <Label Text="Apellido" FontSize="24" Grid.Row="0" Grid.Column="1" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtApellido" IsReadOnly="True"/>
-                <Label Text="Edad" FontSize="24" Grid.Row="0" Grid.Column="2" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtEdad" IsReadOnly="True"/>
-                <Label Text="Fecha" FontSize="24" Grid.Row="0" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtFecha" IsReadOnly="True"/>
-                <Label Text="Ciudad" FontSize="24" Grid.Row="2" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtCiudad" IsReadOnly="True"/>
-                <Label Text="Pais" FontSize="24" Grid.Row="1" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtPais" IsReadOnly="True"/>
-                <Label Text="MontoInicial" FontSize="24" Grid.Row="3" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtMonto" IsReadOnly="True"/>
-                <Label Text="PagoMensual" FontSize="24" Grid.Row="4" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtPago" IsReadOnly="True"/>
-                <Label Text="PagoTotal" FontSize="24" Grid.Row="4" Grid.Column="0" Style="{StaticResource generalStyle}"/>
-                <Entry x:Name="txtTotal" IsReadOnly="True"/>
+                <Label Text="Edad"  FontSize="16" Grid.Row="2" Grid.Column="0"/>
+                <Label x:Name="lbEdad" Text="Ciudad"  FontSize="16" Grid.Row="2" Grid.Column="1"/>
 
+                <Label Text="Fecha"  FontSize="16" Grid.Row="3" Grid.Column="0"/>
+                <Label x:Name="lblFecha" Text="Ciudad"  FontSize="16" Grid.Row="3" Grid.Column="1"/>
 
+                <Label Text="Ciudad"  FontSize="16" Grid.Row="4" Grid.Column="0"/>
+                <Label x:Name="lblCiudad" Text="Ciudad"  FontSize="16" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Text="Pais"  FontSize="16" Grid.Row="5" Grid.Column="0"/>
+                <Label x:Name="lblPais" Text="Ciudad"  FontSize="16" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Monto Inicial"  FontSize="16" Grid.Row="6" Grid.Column="0"/>
+                <Label x:Name="lblMonto" Text="Ciudad"  FontSize="16" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="Pago Mensual"  FontSize="16" Grid.Row="7" Grid.Column="0"/>
+                <Label x:Name="lblPago" Text="Ciudad"  FontSize="16" Grid.Row="7" Grid.Column="1"/>
+
+                <Label Text="Pago Total"  FontSize="16" Grid.Row="8" Grid.Column="0"/>
+                <Label x:Name="lblTotal" Text="Ciudad"  FontSize="16" Grid.Row="8" Grid.Column="1"/>
 
             </Grid>
+
+            <Button x:Name="btnCalcular" Text="Cerrar sesion" Clicked="btnLogina" Grid.Row="0" Grid.Column="0"/>
 
         </StackLayout>
     </ContentPage.Content>

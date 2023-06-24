@@ -4,31 +4,20 @@
              x:Class="cGallegosExamen.Login" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
-            <Label Text="Examen  parcial 1" HorizontalTextAlignment="Center" TextColor="Red"/>
-            <Image WidthRequest="100" HeightRequest="100" Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"></Image>
+            ackLayout>
+            <Label Text="Login" HorizontalTextAlignment="Center" FontSize="24" Style="{StaticResource generalStyle}"/>
+            <Image WidthRequest="100" HeightRequest="100" Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"/>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+            <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
 
-                </Grid.ColumnDefinitions>
+                <Label Text="Usuario" FontSize="20" Grid.Row="0" Grid.Column="0" Style="{StaticResource generalStyle}"/>
+                <Label Text="Contraseña" FontSize="20" Grid.Row="1" Grid.Column="0" Style="{StaticResource generalStyle}"/>
+                <Button x:Name="btnIniciar" Text="Iniciar Sesión" Clicked="btnIniciar_Clicked" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                <Entry x:Name="txtUsuario" Placeholder="Ingrese su usuario" Grid.Row="0" Grid.Column="1" Style="{StaticResource generalStyle}"/>
+                <Entry x:Name="txtPassword" Placeholder="Ingrese su contraseña" IsPassword="True" Grid.Row="1" Grid.Column="1" Style="{StaticResource generalStyle}"/>
 
             </Grid>
-            <Label Text="Usuario" FontSize="20" Grid.Row="0" Grid.Column="0"  Style="{StaticResource generalStyle}"></Label>
-
-            <Entry x:Name="txtUsuario" Placeholder="Ingresar el usuario" Grid.Row="0" Grid.Column="1" />
-
-            <Label Text="Contraseña" FontSize="20" Grid.Row="1" Grid.Column="0" Style="{StaticResource generalStyle}"></Label>
-            <Entry x:Name="txtContraseña" Placeholder="Ingresar contraseña" IsPassword="True" Grid.Row="0" Grid.Column="1"  Style="{StaticResource generalStyle}"></Entry>
-
-            <Button x:Name="btnInicio" Text="Iniciar sesion" Clicked="btnInicio_Clicked"></Button>
-
 
         </StackLayout>
     </ContentPage.Content>

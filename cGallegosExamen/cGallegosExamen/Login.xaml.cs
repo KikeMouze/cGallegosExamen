@@ -17,18 +17,18 @@ namespace cGallegosExamen
             InitializeComponent();
         }
 
-        private void btnInicio_Clicked(object sender, EventArgs e)
+        private void btnIniciar_Clicked(object sender, EventArgs e)
         {
             string usuario = "estudiante2023";
             string contraseña = "uisrael2023";
-            if (txtUsuario.Text == usuario && txtContraseña.Text == contraseña)
+            bool isLogin = txtUsuario.Text == usuario && txtPassword.Text == contraseña ? true : false;
+
+            if (!isLogin)
             {
-                Navigation.PushAsync(new Registro(usuario));
+                DisplayAlert("ERROR", "Usuario o Contraseña incorrectos", "Cancelar");
+                return;
             }
-            else
-            {
-                DisplayAlert("Error", "usuario/contaseña incorrectos", "cerrar");
-            }
+            Navigation.PushAsync(new Registro(usuario));
 
         }
     }

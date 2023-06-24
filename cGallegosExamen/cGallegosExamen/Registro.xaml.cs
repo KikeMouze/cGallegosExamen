@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -12,34 +13,47 @@ namespace cGallegosExamen
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Registro : ContentPage
     {
-        string usuario;
-
+        string usuario = null;
+        double monto = 0.0;
+        double pagoMensual = 0.0;
+        double impuesto = 0.0;
+        double pagoTotal = 0.0;
         public Registro(string usuario)
         {
             InitializeComponent();
-            lblUsuario.Text = "usuario conectado" + " " + "es" + " " + usuario;
-            this.usuario = usuario;
-
+            lblUsuario.Text = usuario;
+            usuario = usuario;
         }
 
-    
-     
+      
+  
 
-        private void btnResumir_Clicked_1(object sender, EventArgs e)
+        private void btnCalcular_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Resumen(usuario));
+            monto = Convert.ToDouble(txtMontoMensual.Text);
+            if (monto < 0 || monto >= 1500)
+            {
+                DisplayAlert("ERROR", "Monto No validos", "Cancelar");
+                return;
+            }
+            impuesto = 1500 * 0.04;
+            pagoMensual = ((1500 - monto) / 4) + impuesto;
+            txtPagoMensual.Text = pagoMensual.ToString();
+            pagoTotal = monto + (pagoMensual * 4);
+
         }
 
-        private void btnCalcularPM_Clicked_1(object sender, EventArgs e)
+        private void btnResumen_Clicked(object sender, EventArgs e)
         {
-            double saldo = Convert.ToDouble(txtMonto.Text);
-            double pagoInicial = saldo;
-            double saldoRestante = 1500 - saldo;
-            double cuotaMensual = (saldoRestante / 4) * 1.04; 
+            string nombre = txtNombre.Text;
+            string apellido = txtApellido.Text;
+            int edad = Convert.ToInt32(txtEdad.Text);
+            string fecha = startDatePicker.Date.ToShortDateString();
+            string ciudad = pkrCiudad.Items[pkrCiudad.SelectedIndex];
+            string pais = pkrPais.Items[pkrPais.SelectedIndex];
 
-            double pagoTotal = pagoInicial + cuotaMensual * 4;
-            txtPago.Text = pagoTotal.ToString();
+            Navigation.PushAsync(new Resumen(usuario, nombre, apellido, edad, fecha, ciudad, pais, monto, pagoMensual, pagoTotal));
+
         }
-    }
     }
 }
